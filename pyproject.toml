@@ -1,18 +1,27 @@
 [tool.poetry]
 name = "rag_search_retrieval"
 version = "0.1.0"
-description = "Experiment with search and retrieval approaches for a RAG application."
+description = "Experiment with search and retrieval approaches for an RAG application."
 authors = ["Fuzzy Labs <info@fuzzylabs.ai>"]
 license = "Apache Software License 2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10, <3.13"
+pymilvus = {extras = ["model"], version = "^2.4.4"}
+langchain-community = "^0.2.10"
+pypdf = "^4.3.1"
+langchain-text-splitters = "^0.2.2"
+jupyter = "^1.0.0"
+sentence-transformers = "^3.0.1"
+scipy = "1.13.0"
+flagembedding = "^1.2.10"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"
 pytest-cov = "^4.1.0"
 licensecheck = "^2024.1.2"
+pandas-stubs = "^2.2.2.240603"
 
 
 [build-system]
@@ -28,9 +37,12 @@ testpaths = [
 # mypy configuration
 [tool.mypy]
 show_error_codes = true
-exclude = ["docs", "tests", "LICENSE"]
+exclude = ["docs", "tests", "LICENSE", "**/*.ipynb"]
 strict = true
 namespace_packages = true
+ignore_missing_imports = true
+disallow_any_generics = false
+warn_return_any = false
 
 # black configuration
 [tool.black]
@@ -82,6 +94,10 @@ ignore = [
     "UP007", # See https://github.com/bokeh/bokeh/pull/13144
 ]
 
+[tool.ruff.lint.pylint]
+# Maximum number of arguments allowed for a function or method definition.
+max-args = 6
+
 [tool.ruff.lint.pydocstyle]
 # Use Google-style docstrings.
 convention = "google"
@@ -93,7 +109,7 @@ max-complexity = 5
 
 # typos configuration
 [tool.typos.files]
-extend-exclude=[".gitignore", "LICENSE", ".*",]
+extend-exclude=[".gitignore", "LICENSE", ".*", "**/*.ipynb"]
 
 [tool.typos.default.extend-words]
 center = "center"
