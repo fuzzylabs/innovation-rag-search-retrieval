@@ -70,12 +70,12 @@ class CustomMilvusClient:
     def create_collection(
         self, collection_name: str, dense_dim: int, dense_distance_metric: str
     ) -> None:
-        """_summary_.
+        """Create a collection for a milvus vector store.
 
         Args:
-            collection_name (str): _description_
-            dense_dim (int): _description_
-            dense_distance_metric (str): _description_
+            collection_name (str): Name of the collection
+            dense_dim (int): Embedding dimension for dense vector
+            dense_distance_metric (str): Metric used by dense embedding model
         """
         # Drop if collection exists
         has_collection = self.milvus_client.has_collection(collection_name, timeout=5)
@@ -121,15 +121,16 @@ class CustomMilvusClient:
         full_text_search_document_embeddings: csr_array,
         batch_size: int = 32,
     ) -> None:
-        """_summary_.
+        """Store texts, embedding (dense and sparse) and metadata.
 
         Args:
-            docs (Document): _description_
-            collection_name (str): _description_
-            dense_model (SentenceTransformer): _description_
-            sparse_model (BaseEmbeddingFunction): _description_
-            full_text_search_document_embeddings (csr_array): _description_
-            batch_size (int, optional): _description_. Defaults to 32.
+            docs (Document): Dataset to be stored in milvus vector store.
+            collection_name (str): Name of the collection
+            dense_model (SentenceTransformer): The embedding model used
+            sparse_model (BaseEmbeddingFunction): The sparse model used
+            full_text_search_document_embeddings (csr_array): The embeddings
+                from BM25 model all the documents
+            batch_size (int, optional): Batch size. Defaults to 32.
         """
         texts, metadatas = [], []
         for doc in docs:
@@ -165,16 +166,19 @@ class CustomMilvusClient:
         top_k: int,
         dense_search_params: dict,
     ) -> list:
-        """_summary_.
+        """Perform dense search.
 
         Args:
-            collection_name (str): _description_
-            query_dense_embedding (np.ndarray): _description_
-            top_k (int): _description_
-            dense_search_params (dict): _description_
+            collection_name (str): Name of the collection
+            query_dense_embedding (np.ndarray): The embedding vector
+                from the dense model for the query
+            top_k (int): Top k entries semantically similar to query
+                in the vector store.
+            dense_search_params (dict): The search parameters such as
+                metrics and other param used to calculate score.
 
         Returns:
-            list: _description_
+            list: List of text, index and score sorted by score.
         """
         result = self.milvus_client.search(
             collection_name=collection_name,
@@ -196,13 +200,16 @@ class CustomMilvusClient:
         """_summary_.
 
         Args:
-            collection_name (str): _description_
-            query_sparse_embedding (list[dict[int, float]]): _description_
-            top_k (int): _description_
-            sparse_search_params (dict): _description_
+            collection_name (str): Name of the collection
+            query_sparse_embedding (list[dict[int, float]]):
+                The sparse vector from the sparse model for the query
+            top_k (int): Top k entries semantically similar to query
+                in the vector store.
+            sparse_search_params (dict): The search parameters such as
+                metrics and other param used to calculate score.
 
         Returns:
-            list: _description_
+            list: List of text, index and score sorted by score.
         """
         result = self.milvus_client.search(
             collection_name=collection_name,
@@ -221,16 +228,19 @@ class CustomMilvusClient:
         top_k: int,
         sparse_search_params: dict,
     ) -> list:
-        """_summary_.
+        """Perform full text search using BM25 model.
 
         Args:
-            collection_name (str): _description_
-            query_full_text_embedding (list[dict[int, float]]): _description_
-            top_k (int): _description_
-            sparse_search_params (dict): _description_
+            collection_name (str): Name of the collection
+            query_full_text_embedding (list[dict[int, float]]):
+                The full text vector from the BM25 model for the query
+            top_k (int): Top k entries semantically similar to query
+                in the vector store.
+            sparse_search_params (dict): The search parameters such as
+                metrics and other param used to calculate score.
 
         Returns:
-            list: _description_
+            list: List of text, index and score sorted by score.
         """
         result = self.milvus_client.search(
             collection_name=collection_name,
