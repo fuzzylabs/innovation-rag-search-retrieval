@@ -1,4 +1,4 @@
-"""Milvus module."""
+"""Milvus vector database."""
 
 import numpy as np
 import pandas as pd
@@ -197,7 +197,7 @@ class CustomMilvusClient:
         top_k: int,
         sparse_search_params: dict,
     ) -> list:
-        """_summary_.
+        """Perform sparse search.
 
         Args:
             collection_name (str): Name of the collection
