@@ -47,6 +47,11 @@ class CustomQdrantClient:
             dense_distance_metric (models.Distance): Metric used
                 by dense embedding model
         """
+        # Drop if collection exists
+        has_collection = self.qdrant_client.collection_exists(collection_name)
+        if has_collection:
+            self.qdrant_client.delete_collection(collection_name)
+
         # Create a collection with 1 dense vector and 2 sparse vector indexes
         self.qdrant_client.create_collection(
             collection_name=collection_name,

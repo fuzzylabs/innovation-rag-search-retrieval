@@ -18,7 +18,7 @@ poetry run jupyter notebook
 
 Once the notebook is up, make sure you update the `FILE_PATH` parameter value. Once the correct file path is set, click `Run -> Run all cells` option.
 
-It takes about 5 mins for everything to get completed if you have a Nvidia GPU.
+> It takes about 10 mins for everything to get completed if you have a Nvidia GPU.
 
 Jump to the `Comparison` cell and toggle between different dropdown options to compare the results from various approaches.
 
@@ -59,7 +59,7 @@ Some questions that might arise in this phase are
 
 > The chunks are stored in a database in several ways and these storing approaches decides how we can retrieve the relevant document from the database.
 
-# Retrieval
+## Retrieval
 
 ![Retrieval](./rag_search_retrieval/assets/retrieval_vector_store.png)
 
