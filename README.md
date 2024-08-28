@@ -2,6 +2,14 @@
 
 In this project, we will experiment with search and retrieval approaches for an RAG application.
 
+We will experiment with the following 3 retrieval approaches
+
+1. Dense Retrieval
+2. Sparse Retrieval
+3. Full text Retrieval using BM-25
+
+We will also create a hybrid retrieval from combination of above 3 approaches and combine results using 2 fusion approaches : RRF and Re-ranker.
+
 # &#127939; How do I get started?
 
 If you haven't already done so, please read [DEVELOPMENT.md](DEVELOPMENT.md) for instructions on how to set up your virtual environment using Poetry.
