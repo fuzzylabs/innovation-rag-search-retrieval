@@ -138,8 +138,15 @@ class CustomMilvusClient:
             metadatas.append(doc.metadata)
         dense_embeddings = dense_model.encode(texts, batch_size=batch_size).tolist()
         sparse_arrays = sparse_model.encode_documents(documents=texts)
+        # If sparse model is bgm3, output is a dictionary containing csr array
+        # If sparse model is splade, output is a csr array
+        sparse_arr = (
+            sparse_arrays
+            if isinstance(sparse_arrays, csr_array)
+            else sparse_arrays["sparse"]
+        )
         sparse_embeddings = [
-            sparse_to_dict(sparse_array) for sparse_array in sparse_arrays["sparse"]
+            sparse_to_dict(sparse_array) for sparse_array in sparse_arr
         ]
         full_text_embeddings = [
             sparse_to_dict(sparse_array)
