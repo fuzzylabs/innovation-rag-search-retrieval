@@ -27,6 +27,7 @@ from fasthtml.common import (
 )
 from logger import get_logger
 
+# Highlight the row in table that matches this target text
 TARGET_TEXT = "This microcontroller is manufactured by STMicroelectronics"
 OUTPUT_PATH = "rag_search_retrieval/data/milvus_results.csv"
 
@@ -67,7 +68,7 @@ def create_table(approach: str) -> Any:
     rows = [
         Tr(
             Th(retrieved_text, scope="row"),
-            Td(f"{score:.4f}"),  # Format score to 4 decimal places
+            Td(f"{score:.4f}"),
             cls=row_class,
         )
         for retrieved_text, score, row_class in rows_data

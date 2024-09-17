@@ -8,7 +8,7 @@ We will experiment with the following 3 retrieval approaches
 2. Sparse Retrieval
 3. Full text Retrieval using BM-25
 
-We will also create a hybrid retrieval from combination of above 3 approaches and combine results using 2 fusion approaches : RRF and Re-ranker.
+We will also create a hybrid retrieval from combination of above 3 approaches and combine results using 2 fusion approaches : Reciprocal Rank Fusion (RRF) and Re-ranker.
 
 # &#127939; How do I get started?
 
@@ -32,7 +32,7 @@ Jump to the `Comparison` cell and toggle between different dropdown options to c
 
 ## FastHTML Application
 
-We use [fasthtml](https://www.fastht.ml/) to create a visualization. You can directly run the application with precomputed results.
+We use [fasthtml](https://www.fastht.ml/) to create a web application. You can directly run the application with precomputed results.
 
 ```bash
 poetry shell
