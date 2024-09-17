@@ -20,6 +20,7 @@ scipy = "1.13.0"
 flagembedding = "^1.2.10"
 qdrant-client = "^1.10.1"
 fastembed = "^0.3.4"
+python-fasthtml = "^0.5.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"
@@ -41,7 +42,7 @@ testpaths = [
 # mypy configuration
 [tool.mypy]
 show_error_codes = true
-exclude = ["docs", "tests", "LICENSE", "**/*.ipynb"]
+exclude = ["docs", "tests", "LICENSE", "**/*.ipynb", "app/"]
 strict = true
 namespace_packages = true
 ignore_missing_imports = true
@@ -74,7 +75,6 @@ line-length = 88
 show-fixes = true
 
 [tool.ruff.lint]
-ignore-init-module-imports = true
 select = [
     "C4",   # flake8-comprehensions
     "SIM",  # flake8-simplify
@@ -113,7 +113,7 @@ max-complexity = 5
 
 # typos configuration
 [tool.typos.files]
-extend-exclude=[".gitignore", "LICENSE", ".*", "**/*.ipynb"]
+extend-exclude=[".gitignore", "LICENSE", ".*", "**/*.ipynb", "**/*.csv"]
 
 [tool.typos.default.extend-words]
 center = "center"

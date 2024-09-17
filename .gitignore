@@ -236,3 +236,6 @@ $RECYCLE.BIN/
 # Milvus database
 *.db
 *.db.lock
+
+# FastHTML session key
+**/*.sesskey

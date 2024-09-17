@@ -1,0 +1,167 @@
+Retrieved_Text,Score_sparse,Score_full text,Score_dense_sparse_rrf,Score_dense_sparse_reranker,Score_dense_full text_rrf,Score_dense_full text_reranker,Score_dense_sparse_full text_rrf,Score_dense_sparse_full text_reranker,Score_dense
+"38
+A Beginner’s Guide to Designing Embedded System ApplicationsFigure 1.23 shows how different elements of the STM32F429ZIT6U microcontroller  are mapped 
+to the Zio and Arduino-compatible headers of the NUCLEO-F429ZI board. Some other elements 
+are mapped to the CN11 and CN12 headers of the NUCLEO-F429ZI board, as will be discussed in upcoming chapters. Further information on these headers is available from [17].
+In this chapter, buttons were connected to the NUCLEO board using pins D2 to D7. From Figure 1.23, 
+it can be seen that those digital inputs can also be referred to as PF_15, PE_13, P_14, PE_11, PE_9, and PF_13, respectively. Throughout this book, many pins of the ST Zio connectors will be used, and they will be referred to in the code using the names shown in Figure 1.23.",0.30795398354530334,8.811583518981934,0.03252247488101534,0.719777735783016,0.032266458495966696,0.719580723058571,0.04839549075403121,0.719777735783016,0.475778192281723
+"Chapter 1 | Introduction to Embedded Systems 
+33Proposed Exercise
+1. How can the code be changed in such a way that the system is blocked after three incorrect codes 
+are entered?
+Answer to the Exercise
+1. It can be achieved by means of the change in T able 1.11.
+T able 1.11 Proposed modification in the code in order to achieve the new behavior.
+Line in Code 1.5 New code to be used
+40 if ( numberOfIncorrectCodes < 5 ) 40 if ( numberOfIncorrectCodes < 3 )
+1.3 Under the Hood
+1.3.1 Brief Introduction to the Cortex-M Processor  Family and the NUCLEO Board
+In this chapter, many programs were developed using the NUCLEO board, provided with the 
+STM32F429ZIT6U microcontroller . This microcontroller is manufactured by STMicroelectronics [13]",0.3120812177658081,16.359878540039062,0.01639344262295082,0.9869795098861571,0.016666666666666666,0.9869795098861571,0.03306010928961749,0.9869795098861571,
+"Chapter 1 | Introduction to Embedded Systems 
+37The STM32F429ZIT6U microcontroller includes a Cortex-M4 processor , as shown in Figure 1.22. It 
+can be appreciated that, beyond the processor, the microcontroller includes other peripherals such as 
+communication cores (ethernet, USB, UART, etc.), memory, timers, and GPIO (General Purpose Input Output) ports. 
+NUCLEO
+-F429ZI32F429ZIT6U
+ARM7B776 VQ
+PHL 7B 7213e412000K620 Y12000
+K620 Y
+120 00K620 YDGKYD
+KMS-1 102NL1706C
+STM32F103CBT6
+e393701GH218CHN
+ST890C
+GK717
+11
+22
+33
+44
+55
+66
+77
+88
+9
+10
+11
+12
+13
+14
+15PH_0
+PD_0
+PD_1
+PG_0PH_1PF_2PA_7PF_10PF_5PF_3PC_3PC_030
+29
+28
+27
+2616
+2515
+2414
+2313
+2212
+2111
+2010
+199
+18
+17
+165V
+VIN3.3VIOREF
+GND
+GNDGND
+NCNC
+UART2_RX
+CAN1_TDCAN1_ DRADC1/7ADC1/3
+ADC1/10
+ADC1/13
+ADC3/9
+ADC3/15
+ADC3/8
+ADC3/5NRSTPC_8
+PC_9
+PC_10
+PC_11
+PC_12
+PD_2
+PG_2
+PG_3
+GNDPD_7
+PD_6
+PD_5
+PD_4
+PD_3
+PE_2
+PE_4
+PE_3
+PF_7
+PG_1UART2_RX
+UART2_ XT
+UART_X7TUART2_RTS
+UART2_CTSUART3_TX
+UART3_RX
+UART5_TX
+UART5_RX
+PA_3
+SPI1_MOSISPI3_SCK
+SPI2_SCK",0.4066288471221924,,0.03333333333333333,0.5366164587030771,0.016666666666666666,0.5347643737358613,0.03333333333333333,0.5366164587030771,0.5443625450134277
+"Chapter 4 | Finite-State Machines and the Real-Time Clock
+171 References
+[1] “4x4 Keypad Module Pinout, Configuration, Features, Circuit & Datasheet” . Accessed July 9, 
+2021. 
+[2] “Breadboard Power Supply Module” . Accessed July 9, 2021. https://components101.com/modules/5v-mb102-breadboard-power-supply-module 
+[3] “UM1974 User manual - STM32 Nucleo-144 boards (MB1137)” . Accessed July 9, 2021. https://www.st.com/resource/en/user_manual/dm00244518-stm32-nucleo144-boards-mb1137-stmicroelectronics.pdf 
+[4] “GitHub - armBookCodeExamples/Directory” . Accessed July 9, 2021. https://github.com/armBookCodeExamples/Directory/ 
+[5] “Time - API references and tutorials | Mbed OS 6 Documentation ” . Accessed July 9, 2021. 
+https://os.mbed.com/docs/mbed-os/v6.12/apis/time.html 
+[6] “<cstring> (string.h) - C++ Reference” . Accessed July 9, 2021. https://www.cplusplus.com/reference/cstring/",,,0.016129032258064516,,0.016129032258064516,,0.016129032258064516,,0.47393766045570374
+"Index
+567 STM 32F429 ZIT 6U microcontroller 5, 33, 37, 38 
+ stop bit 46, 64, 65, 80, 256 , 257 , 273 , 468  
+ ST Zio connectors xiv, 6, 9, 37, 38, 44, 346  
+ superloop 13, 519  
+ synchronous communication 255
+T TCP server 456 , 457 , 459 , 460 –463 , 491  
+ temperature sensor 4, 5, 87, 106 , 123 , 182 , 220 , 233 , 334 , 486 , 550  
+ time management xvi, 86, 95, 99, 289 , 342 , 348 , 353  
+ timers xvi, xxvii, 37, 306 , 342 , 343 , 345 , 348 –350 , 353 , 354 , 
+ 361 , 441 , 512 –517 , 533 , 535 , 537 , 538 , 539  
+ tm structure 153  
+ TO- 220  package 89
+U UART xvi, xvii, 5, 44, 61, 63, 79, 82, 84, 86, 181 , 191 , 222 , 255 , 290 , 291 , 
+ 306 , 350 , 420 , 423 , 447 , 455 , 461 , 465 , 468 , 544  
+ USB xiv, xxvii, 4, 9, 37, 44, 45, 63, 79, 82, 88, 132 , 449 , 506 , 507 , 508 , 544  
+ USB connection xiv, 44, 506  
+ use cases 497 , 501 –504 , 511 , 545 , 546 , 547 , 548
+V validation 496 , 497 , 546 , 547  
+ verification 81, 92, 496 , 497 , 546  
+ vineyard frost prevention 123 , 124",0.2452077716588974,,,,,,,,
+"M_14, STM_PIN_DATA_EXT(STM_MODE_AF_PP, GPIO_NOPULL, GPIO_AF9_TIM14,  1, 0)}, 
+    {NC, NC, 0}
+}; 
+Code 8.3 Notes on the PinNames.h file of the NUCLEO-F429ZI  board.",,,0.015873015873015872,,,,,,0.4717637598514557
+"Preface
+xix
+Temperatur e: 10 °C
+Over temperatur e detected: OFF
+Gas detected: OFF
+Motion detected: OFF
+Alarm: OFF
+Incorr ect code : OFF LED
+System blocked : OFF LEDSmart Home System
+Figure 7 User interface implemented using a Wi-Fi  connection and a web browser.
+In this process, the Mbed™ OS 6 platform core generic software components, plus the HAL (Hardware 
+Abstraction Layer) ports that allow Mbed to transparently run on microcontrollers from different manufacturers, are introduced.
+In the final chapter, the main ideas are summarized by means of an irrigation system, shown in 
+Figure 8, that is developed from scratch. In this way, a guide to designing and implementing an embedded system project is provided for the reader.",,8.725212097167969,,,,,,,
+"This section will begin the implementation of the smart home system, following the diagram shown in Figure 1.3. This first implementation will detect fire using an over temperature detector and a gas detector and, if it detects fire, it will activate the alarm until a given code is entered.  For this purpose, the NUCLEO board [1] provided with the STM32F429ZIT6U microcontroller [9] (referred to as the STM32 microcontroller ) is used.",0.2688245177268982,12.44285774230957,,0.5458909916868062,0.01639344262295082,0.5471918768436008,0.032266458495966696,0.5458909916868062,
+"WaRNINg: Keil Studio Cloud translates the C/C++ language code into assembly code while considering the available resources of the target board. For this reason, the reader should be very careful to use only pin names that are shown in Figure 1.23.
+From the above discussion, it is possible to derive the hierarchy that is represented in Figure 1.24. It should be noted that a given Arm processor can be used by different microcontroller manufacturers, and a given microcontroller can be used in different development boards or embedded systems. 
+Figure 1.24 Hierarchy of different elements introduced in this chapter.
+NOTE:  A microcontroller may have one or many processors, while a processor may have one or many cores. A microprocessor consists of the processor, named in this context as the Central Processing Unit (CPU), and uses an external bus to interface with memory and peripherals.
+Proposed Exercise",,10.573026657104492,,,,,,,
+"[3] “Arm Keil | Cloud-based Development T ools for IoT, ML and Embedded” . Accessed July 9, 2021. https://www.keil.arm.com/ 
+[4] “Log In | Mbed” . Accessed July 9, 2021. https://os.mbed.com/account/login/  
+[5] “Keil Studio” . Accessed July 9, 2021. https://studio.keil.arm.com/  
+[6] “Documentation - Arm Developer” . Accessed July 9, 2021. https://developer.arm.com/documentation 
+[7] “Arm Mbed Studio” . Accessed July 9, 2021. https://os.mbed.com/studio/ 
+[8] “STM32CudeIDE - Integrated Development Environment” . Accessed July 9, 2021. https://www.st.com/en/development-tools/stm32cubeide.html 
+[9] “STM32F429ZI - High-performance advanced line, Arm Cortex-M4” . Accessed July 9, 2021.  https://www.st.com/en/microcontrollers-microprocessors/stm32f429zi.html",,,,0.3736472447989349,,0.3731902581478581,,0.3736472447989349,0.44600552320480347

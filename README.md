@@ -30,6 +30,15 @@ Once the notebook is up, make sure you update the `FILE_PATH` parameter value. O
 
 Jump to the `Comparison` cell and toggle between different dropdown options to compare the results from various approaches.
 
+## FastHTML Application
+
+We use [fasthtml](https://www.fastht.ml/) to create a visualization. You can directly run the application with precomputed results.
+
+```bash
+poetry shell
+python app/main.py
+```
+
 # 💡 Background
 
 Let’s take a look at what the architecture for a naive (query-)RAG looks like:
